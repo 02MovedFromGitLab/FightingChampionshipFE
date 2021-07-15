@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'fighter/:id', component: FighterDetailComponent},
   {path: 'venues', component: VenuesComponent},
   {path: 'results', component: ResultsComponent},
-  {path: 'fighters/new', component: FighterFormComponent}
+  {path: 'fighters/new', component: FighterFormComponent},
+  {path: 'fighters/edit/:id', component: FighterFormComponent}
 ];
 
 

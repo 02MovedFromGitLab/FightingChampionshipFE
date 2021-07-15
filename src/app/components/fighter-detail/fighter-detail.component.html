@@ -1,4 +1,4 @@
-<div class="card mb-4" style="max-width: 800px;">
+<div class="card mb-4 mt-4" style="max-width: 800px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img
@@ -11,9 +11,9 @@
         <h4 class="card-header text-center"><b> {{fighter.firstName}}</b> "{{fighter.nickName}}"
           <b>{{fighter.lastName}} </b></h4>
         <p class="card-text"><b>DOB:</b> {{fighter.dob}} </p>
-        <p class="card-text"><b>Age:</b> {{fighter.birthPlace}}
+        <p class="card-text"><b>Born in:</b> {{fighter.birthPlace}}
         <p class="card-text"><b>Stance:</b> {{fighter.stance}}
-        <p class="card-text"><b>Training</b> @: {{fighter.currentGym}}
+        <p class="card-text"><b>Reach:</b> {{fighter.reach}}
         <p class="card-text"><b>Height:</b> {{fighter.height}}
         <p class="card-text"><b>Weight:</b> {{fighter.weight}}
         <p class="card-text"><b>Weightclass:</b> {{fighter.weightClass.name}} ~
@@ -22,6 +22,10 @@
         <p class="card-text"><b>Training@</b> {{fighter.currentGym}}
         <h4 class="card-footer text-center mt-2"><b>Won:</b> {{fighterRecord.wins}}
           <b>Lost:</b> {{fighterRecord.losses}}   <b>Drawn:</b> {{fighterRecord.draws}}</h4>
+        <div class="text-center">
+        <button routerLink="/fighters/edit/{{fighter.id}}" class="btn btn-primary d-inline-block">
+          Edit</button>
+          </div>
       </div>
     </div>
   </div>

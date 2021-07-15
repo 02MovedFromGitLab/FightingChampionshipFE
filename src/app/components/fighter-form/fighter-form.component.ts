@@ -45,6 +45,13 @@ export class FighterFormComponent implements OnInit {
   ngOnInit(): void {
     const forms = document.querySelectorAll('.needs-validation');
     this.BootStrapBehaviour(forms);
+
+    const idIsPresent = this.activatedRoute.snapshot.paramMap.has('id');
+    if (idIsPresent) {
+      const id = + this.activatedRoute.snapshot.paramMap.get('id');
+      this.fighterService.getFighter(id).subscribe(
+        dataSingleFighter => this.fighter = dataSingleFighter);
+    }
   }
 
   saveFighter(): void {
