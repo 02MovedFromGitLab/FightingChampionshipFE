@@ -10,6 +10,7 @@ import { FighterDetailComponent } from './components/fighter-detail/fighter-deta
 import { ResultsComponent } from './components/results/results.component';
 import { VenuesComponent } from './components/venues/venues.component';
 import { HomeComponent } from './components/home/home.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

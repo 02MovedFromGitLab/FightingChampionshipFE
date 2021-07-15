@@ -28,4 +28,8 @@ export class FighterService {
       map(response => response));
   }
 
+  saveFighter(fighter: Fighter): Observable<Fighter> {
+    return this.httpClient.post<Fighter>(this.getUrl + '/new', fighter);
+  }
+
 }

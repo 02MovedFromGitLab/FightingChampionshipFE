@@ -1,1 +1,98 @@
-<p>fighter-form works!</p>
+<section>
+  <div id="content-wrapper" class="d-flex flex-column mt-3 mb-3">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="row align-content-center"><h2>Add New/Edit Fighter</h2></div>
+        <form (ngSubmit)="saveFighter()">
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            First Name:
+          </span>
+            <input [(ngModel)]="fighter.firstName" type="text" name="firstName"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Last Name:
+          </span>
+            <input [(ngModel)]="fighter.lastName" type="text" name="lastName"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Nickname:
+          </span>
+            <input [(ngModel)]="fighter.nickName" type="text" name="nickName"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Date of Birth:
+          </span>
+            <input [(ngModel)]="fighter.dob" type="date" name="dob"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Birth place:
+          </span>
+            <input [(ngModel)]="fighter.birthPlace" type="text" name="birthPlace"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Current Gym:
+          </span>
+            <input [(ngModel)]="fighter.currentGym" type="text" name="currentGym"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Stance:
+          </span>
+            <input [(ngModel)]="fighter.stance" type="text" name="stance"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Weight:
+          </span>
+            <input [(ngModel)]="fighter.weight" type="text" name="weight"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Height:
+          </span>
+            <input [(ngModel)]="fighter.height" type="text" name="height"
+                   class="form-control"/>
+          </div>
+
+          <div class="input-group mb-3" ><span class="input-group-text">
+            Reach:
+          </span>
+            <input [(ngModel)]="fighter.reach" type="text" name="reach"
+                   class="form-control"/>
+          </div>
+
+
+          <!-- Look at Angular enums that return full made 'class' or create here-->
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="weight-class">Weight Class</label>
+            <select [(ngModel)]="fighter.weightClass.id" class="form-select" id="weight-class"
+                    name="WeightClass">
+              <option selected>Choose...</option>
+              <option value="1">1. Strawweight </option>
+              <option value="2">2. Flyweight</option>
+              <option value="3">3. Bantamweight</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -6,6 +6,7 @@ import {FighterListComponent} from '../components/fighter-list/fighter-list.comp
 import {VenuesComponent} from '../components/venues/venues.component';
 import {ResultsComponent} from '../components/results/results.component';
 import {FighterDetailComponent} from '../components/fighter-detail/fighter-detail.component';
+import {FighterFormComponent} from '../components/fighter-form/fighter-form.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'fighter', component: FighterListComponent},
   {path: 'fighter/:id', component: FighterDetailComponent},
   {path: 'venues', component: VenuesComponent},
-  {path: 'results', component: ResultsComponent}
+  {path: 'results', component: ResultsComponent},
+  {path: 'fighter/new', component: FighterFormComponent}
 ];
 
 
