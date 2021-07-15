@@ -1,1 +1,14 @@
-<p>fighter-list works!</p>
+<p>This workkkkkks</p>
+
+<h1>Fighters</h1>
+<ul *ngFor="let fighter of fighters">
+  <li>Name: {{ fighter.firstName }} "{{ fighter.nickName }}" {{ fighter.lastName }}</li>
+  <li>Date of birth: {{ fighter.dob }}</li>
+  <li>Born: {{ fighter.birthPlace }}</li>
+  <li>Fighting out of: {{ fighter.currentGym }}</li>
+  <li>Weight class: {{ fighter.weightClass.name }}</li>
+  <li>Stance: {{ fighter.stance }}</li>
+  <li>Weight: {{ fighter.weight }}</li>
+  <li>Height: {{ fighter.height }}</li>
+  <li>Reach: {{ fighter.reach }}</li>
+</ul>

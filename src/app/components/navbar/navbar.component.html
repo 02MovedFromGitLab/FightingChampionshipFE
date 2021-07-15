@@ -1,1 +1,31 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-light navbar-expand-md bg-white shadow">
+  <div class="container"><a class="navbar-brand" routerLink="home" >SpringFIGHT</a><button
+    data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+    class="visually-hidden">Toggle navigation</span>
+    <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item"><a routerLink="fighters" class="nav-link active">Fighters</a></li>
+        <li class="nav-item"><a routerLink="venues" class="nav-link active">Venues</a></li>
+        <li class="nav-item"><a routerLink="results" class="nav-link active">Results</a></li>
+        <li class="nav-item">
+          <a class="btn btn-primary action-button" >Button01</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary action-button mx-2" >Button02</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary action-button mx-2" >Button03</a>
+        </li>
+        <li  class="nav-item">
+          <form method="post">
+            <button class="btn btn-light action-button mx-2" type="submit"  >Log out</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
