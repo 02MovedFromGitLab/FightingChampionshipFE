@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FighterService} from '../../services/fighter.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Fighter} from '../../models/fighter.model';
+import {FightRecord} from '../../models/fight-record.model';
 
 @Component({
   selector: 'app-fighter-detail',
@@ -11,6 +12,7 @@ import {Fighter} from '../../models/fighter.model';
 export class FighterDetailComponent implements OnInit {
 
 fighter: Fighter = new Fighter();
+fighterRecord: FightRecord = new FightRecord();
 
   constructor(private fighterService: FighterService,
               private router: Router,
@@ -22,6 +24,9 @@ fighter: Fighter = new Fighter();
       const id = + this.activatedRoute.snapshot.paramMap.get('id');
       this.fighterService.getFighter(id).subscribe(
         dataSingleFighter => this.fighter = dataSingleFighter
+      );
+      this.fighterService.getFighterRecord(id).subscribe(
+        dataSingleRecord => this.fighterRecord = dataSingleRecord
       );
     }
 

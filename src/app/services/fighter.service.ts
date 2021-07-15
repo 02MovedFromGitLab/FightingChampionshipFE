@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Fighter} from '../models/fighter.model';
 import {map} from 'rxjs/operators';
+import {FightRecord} from '../models/fight-record.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,11 @@ export class FighterService {
 
   getFighter(id: number): Observable<Fighter> {
     return this.httpClient.get<Fighter>(this.getUrl + `/${id}`).pipe(
+      map(response => response));
+  }
+
+  getFighterRecord(id: number): Observable<FightRecord> {
+    return this.httpClient.get<FightRecord>(this.getUrl + `/record/${id}`).pipe(
       map(response => response));
   }
 

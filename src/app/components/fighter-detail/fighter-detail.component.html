@@ -3,22 +3,25 @@
     <div class="col-md-4">
       <img
 
-        alt="..."
+        alt="no url for pictures yet"
         class="img-fluid"/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Name: {{fighter.firstName}} "{{fighter.nickName}}"
-          {{fighter.lastName}} </h5>
-        <p class="card-text">DOB: {{fighter.dob}} </p>
-        <p class="card-text">Age: {{fighter.birthPlace}}
-        <p class="card-text">Stance: {{fighter.stance}}
-        <p class="card-text">Training @: {{fighter.currentGym}}
-        <p class="card-text">Height: {{fighter.height}}
-        <p class="card-text">Weight: {{fighter.weight}}
-        <p class="card-text">Weightclass: {{fighter.weightClass.name}}  "
-        {{fighter.weightClass.abbreviation}}"}
+        <h4 class="card-header text-center"><b> {{fighter.firstName}}</b> "{{fighter.nickName}}"
+          <b>{{fighter.lastName}} </b></h4>
+        <p class="card-text"><b>DOB:</b> {{fighter.dob}} </p>
+        <p class="card-text"><b>Age:</b> {{fighter.birthPlace}}
+        <p class="card-text"><b>Stance:</b> {{fighter.stance}}
+        <p class="card-text"><b>Training</b> @: {{fighter.currentGym}}
+        <p class="card-text"><b>Height:</b> {{fighter.height}}
+        <p class="card-text"><b>Weight:</b> {{fighter.weight}}
+        <p class="card-text"><b>Weightclass:</b> {{fighter.weightClass.name}} ~
+         "{{fighter.weightClass.abbreviation}}"
         </p>
+        <p class="card-text"><b>Training@</b> {{fighter.currentGym}}
+        <h4 class="card-footer text-center mt-2"><b>Won:</b> {{fighterRecord.wins}}
+          <b>Lost:</b> {{fighterRecord.losses}}   <b>Drawn:</b> {{fighterRecord.draws}}</h4>
       </div>
     </div>
   </div>
