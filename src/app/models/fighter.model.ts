@@ -1,6 +1,7 @@
 import {WeightClass} from './weight-class.model';
 
 export class Fighter {
+  id: number;
   firstName: string;
   lastName: string;
   nickName: string;

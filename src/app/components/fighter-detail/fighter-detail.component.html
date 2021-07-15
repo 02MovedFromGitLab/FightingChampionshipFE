@@ -1,1 +1,25 @@
-<p>fighter-detail works!</p>
+<div class="card mb-4" style="max-width: 800px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+
+        alt="..."
+        class="img-fluid"/>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Name: {{fighter.firstName}} "{{fighter.nickName}}"
+          {{fighter.lastName}} </h5>
+        <p class="card-text">DOB: {{fighter.dob}} </p>
+        <p class="card-text">Age: {{fighter.birthPlace}}
+        <p class="card-text">Stance: {{fighter.stance}}
+        <p class="card-text">Training @: {{fighter.currentGym}}
+        <p class="card-text">Height: {{fighter.height}}
+        <p class="card-text">Weight: {{fighter.weight}}
+        <p class="card-text">Weightclass: {{fighter.weightClass.name}}  "
+        {{fighter.weightClass.abbreviation}}"}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

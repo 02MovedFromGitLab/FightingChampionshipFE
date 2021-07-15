@@ -5,11 +5,13 @@ import {HomeComponent} from '../components/home/home.component';
 import {FighterListComponent} from '../components/fighter-list/fighter-list.component';
 import {VenuesComponent} from '../components/venues/venues.component';
 import {ResultsComponent} from '../components/results/results.component';
+import {FighterDetailComponent} from '../components/fighter-detail/fighter-detail.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'fighters', component: FighterListComponent},
+  {path: 'fighter', component: FighterListComponent},
+  {path: 'fighter/:id', component: FighterDetailComponent},
   {path: 'venues', component: VenuesComponent},
   {path: 'results', component: ResultsComponent}
 ];

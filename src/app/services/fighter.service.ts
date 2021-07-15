@@ -8,13 +8,18 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FighterService {
-  private getUrl = 'http://localhost:8080/api/v1/fighter/all';
+  private getUrl = 'http://localhost:8080/api/v1/fighter';
 
   constructor(private httpClient: HttpClient) { }
 
-  public getFighters(): Observable<Fighter[]> {
-    return this.httpClient.get<Fighter[]>(this.getUrl).pipe(
+  getFighters(): Observable<Fighter[]> {
+    return this.httpClient.get<Fighter[]>(this.getUrl + '/all').pipe(
      map(response => response));
+  }
+
+  getFighter(id: number): Observable<Fighter> {
+    return this.httpClient.get<Fighter>(this.getUrl + `/${id}`).pipe(
+      map(response => response));
   }
 
 }

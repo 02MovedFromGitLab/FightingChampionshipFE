@@ -1,14 +1,51 @@
-<p>This workkkkkks</p>
+<h1>All Fighters in Database: </h1>
+<section>
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card mb-3" style="max-width: 540px">
+        <div class="card-body">
+          <form class="d-flex align-items-center">
+<!--            <i class="fas fa-search d-none d-sm-block h4 text-body m-0"></i>-->
+            <i class="fa fa-search h4 d-sm-block d-block m-2"></i>
+            <input name="title"
+                   class="form-control form-control-lg flex-shrink-1 form-control-borderless"
+                   type="search"
+                   placeholder="Search"
+                   aria-label="Search"/>
+            <button class="btn btn-success btn-lg" type="submit">Search</button>
+            <a class="btn btn-primary btn-lg">+New</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">Search results for: Thymeleaf returned search term here "<span></span>"</div>
+</section>
+<section>
+  <!--REPEAT DIV-->
+  <div *ngFor="let fighter of fighters"  class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
 
-<h1>Fighters</h1>
-<ul *ngFor="let fighter of fighters">
-  <li>Name: {{ fighter.firstName }} "{{ fighter.nickName }}" {{ fighter.lastName }}</li>
-  <li>Date of birth: {{ fighter.dob }}</li>
-  <li>Born: {{ fighter.birthPlace }}</li>
-  <li>Fighting out of: {{ fighter.currentGym }}</li>
-  <li>Weight class: {{ fighter.weightClass.name }}</li>
-  <li>Stance: {{ fighter.stance }}</li>
-  <li>Weight: {{ fighter.weight }}</li>
-  <li>Height: {{ fighter.height }}</li>
-  <li>Reach: {{ fighter.reach }}</li>
-</ul>
+          alt="..."
+          class="img-fluid"/>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{fighter.firstName}} "{{fighter.nickName}}"
+            {{fighter.lastName}} </h5>
+          <p class="card-text">DOB: {{fighter.dob}} </p>
+          <p class="card-text">Age: {{fighter.birthPlace}}
+          <p class="card-text">Stance: {{fighter.stance}}
+            <small class="text-muted">
+              <span>View Detail</span><br>
+              <a routerLink="/fighter/{{fighter.id}}">asdfasdfasdf</a>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
