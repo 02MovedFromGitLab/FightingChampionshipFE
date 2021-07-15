@@ -1,23 +1,23 @@
-<section>
   <div id="content-wrapper" class="d-flex flex-column mt-3 mb-3">
     <div class="row">
 
       <div class="col-lg-6">
         <div class="row align-content-center"><h2>Add New/Edit Fighter</h2></div>
-        <form (ngSubmit)="saveFighter()">
+<!--      The script for this was added but it did not work  <form (ngSubmit)="saveFighter()" class="needs-validation" novalidate>-->
 
+          <form (ngSubmit)="saveFighter()" class="needs-validation" novalidate>
           <div class="input-group mb-3" ><span class="input-group-text">
             First Name:
           </span>
             <input [(ngModel)]="fighter.firstName" type="text" name="firstName"
-                   class="form-control"/>
+                   class="form-control" required/>
           </div>
 
           <div class="input-group mb-3" ><span class="input-group-text">
             Last Name:
           </span>
             <input [(ngModel)]="fighter.lastName" type="text" name="lastName"
-                   class="form-control"/>
+                   class="form-control" required/>
           </div>
 
           <div class="input-group mb-3" ><span class="input-group-text">
@@ -48,12 +48,24 @@
                    class="form-control"/>
           </div>
 
-          <div class="input-group mb-3" ><span class="input-group-text">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="stance-id">Stance</label>
+            <select [(ngModel)]="fighter.stance" class="form-select" id="stance-id"
+                    name="stance" required="true">
+              <option selected>Choose...</option>
+              <option value="Counter-Striker">Counter-Striker</option>
+              <option value="Grappling">Grappling</option>
+              <option value="Karate">Karate</option>
+              <option value="Muay Thai">Muay Thai</option>
+            </select>
+          </div>
+
+       <!--   <div class="input-group mb-3" ><span class="input-group-text">
             Stance:
           </span>
             <input [(ngModel)]="fighter.stance" type="text" name="stance"
                    class="form-control"/>
-          </div>
+          </div>-->
 
           <div class="input-group mb-3" ><span class="input-group-text">
             Weight:
@@ -80,12 +92,17 @@
           <!-- Look at Angular enums that return full made 'class' or create here-->
           <div class="input-group mb-3">
             <label class="input-group-text" for="weight-class">Weight Class</label>
-            <select [(ngModel)]="fighter.weightClass.id" class="form-select" id="weight-class"
+            <select [(ngModel)]="weightClass.id" class="form-select" id="weight-class"
                     name="WeightClass">
               <option selected>Choose...</option>
               <option value="1">1. Strawweight </option>
               <option value="2">2. Flyweight</option>
               <option value="3">3. Bantamweight</option>
+              <option value="4">4. Featherweight</option>
+              <option value="5">5. Lightweight</option>
+              <option value="6">6. Welterweight</option>
+              <option value="7">7. Middleweight</option>
+              <option value="8">8. LightHeavyweight</option>
             </select>
           </div>
 
@@ -95,4 +112,3 @@
     </div>
 
   </div>
-</section>

@@ -4,6 +4,30 @@ import {WeightClass} from '../../models/weight-class.model';
 import {FighterService} from '../../services/fighter.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
+
+/*
+The original .js.
+// tslint:disable-next-line:only-arrow-functions
+(function(): void {
+  'use strict';
+
+  const forms = document.querySelectorAll('.needs-validation');
+
+  Array.prototype.slice.call(forms)
+    // tslint:disable-next-line:only-arrow-functions
+    .forEach(function(form): void {
+      // tslint:disable-next-line:only-arrow-functions
+      form.addEventListener('submit', function(event): any {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      }, false);
+    });
+})();*/
+
 @Component({
   selector: 'app-fighter-form',
   templateUrl: './fighter-form.component.html',
@@ -19,9 +43,12 @@ export class FighterFormComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const forms = document.querySelectorAll('.needs-validation');
+    this.BootStrapBehaviour(forms);
   }
 
   saveFighter(): void {
+    this.fighter.weightClass = this.weightClass;
     this.fighterService.saveFighter(this.fighter).subscribe(
       data => {
         console.log('response ', data);
@@ -30,6 +57,19 @@ export class FighterFormComponent implements OnInit {
     );
   }
 
-
+  BootStrapBehaviour(forms): void {
+    Array.prototype.slice.call(forms)
+      // tslint:disable-next-line:only-arrow-functions
+      .forEach(function(form): void {
+        // tslint:disable-next-line:only-arrow-functions
+        form.addEventListener('submit', function(event): any {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+  }
 
 }
