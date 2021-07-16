@@ -9,18 +9,35 @@ import {Fighter} from '../../models/fighter.model';
 })
 
 export class FighterListComponent implements OnInit {
- fighters: Fighter[] = [];
+
+ fighters: Fighter[] = []; // Basic Fighter array remains
+ filters = {
+   keyword: ''
+ }; // filters is a json object a keyword == '' to begin with.
 
   constructor(private fighterService: FighterService) { }
 
   ngOnInit(): void {
+    // Provides our initial values for fighters === All of them
     this.fighterService.getFighters().subscribe(
-      fighters => {
-        console.log('response before:' + fighters);
-        this.fighters = fighters;
-        console.log('response after' + fighters);
+      fightersData => {
+        this.fighters = fightersData;
       }
     );
+  }
+
+  // Is called with every key stroke in our page input
+  searchedFighters(): void {
+    this.fighterService.getFighters().subscribe(
+      fightersData => {
+        this.fighters = this.filterFighters(fightersData);
+      });
+  }
+
+  private filterFighters(fighters: Fighter[]): Fighter[] {
+    return fighters.filter( f => {
+      return f.firstName.toLowerCase().includes(this.filters.keyword.toLowerCase());
+    });
   }
 
 }
