@@ -87,7 +87,7 @@
           <div class="input-group mb-1">
             <label class="input-group-text" for="weight-class">Weight Class</label>
             <select [(ngModel)]="weightClass.id" class="form-select" id="weight-class"
-                    name="WeightClass">
+                    name="WeightClass" type="number" required>
               <option selected>Choose...</option>
               <option value="1">1. Strawweight </option>
               <option value="2">2. Flyweight</option>
