@@ -32,4 +32,8 @@ export class FighterService {
     return this.httpClient.post<Fighter>(this.getUrl + '/new', fighter);
   }
 
+  deleteFighter(id: number): Observable<any> {
+    return this.httpClient.delete(`${this.getUrl}/${id}`,
+      {responseType: 'text'});
+  }
 }

@@ -29,7 +29,19 @@ fighterRecord: FightRecord = new FightRecord();
         dataSingleRecord => this.fighterRecord = dataSingleRecord
       );
     }
-
   }
+  onClickDelete(): void {
+    if (confirm('Only fighters without a fight history can be deleted, are you sure? NOTE: fighter record will be checked in the future')) {
+      this.fighterService.deleteFighter(this.fighter.id).subscribe(
+        data => {
+          console.log('deleted response', data);
+          confirm('deleted response, happypath' + data);
+          this.router.navigateByUrl('fighter');
+        }
+      );
+      this.router.navigateByUrl('fighter');
+    }
+  }
+
 
 }
